@@ -57,27 +57,21 @@
         </tr>
         <tr>
             <td class="white">Total Miles</td>
-            <!-- //////////////////////////////// -->
-            <!-- aur yahan pr oninput ap kyon call karwa rahy hai yahan pr to input aa kr save honi hai yahan pr to hum input kr hi nahi rhy ok ic jahan pr output show honi hai wahan se oninput function remove kr do ok  -->
-            <!-- mainy ik oninput rmeove kr diya hai baki ap sary remove kary hamain jahan output store ho rahi wahan function call karny ki zarorat nahi ok fix it all ok  -->
-            <!-- //////////////////////////// -->
-            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile1"></td>
-            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile2" oninput="feulcost('totalmile2','avgmilepergallon','feulreduction2','curgasprice','feulcost2')"readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile1" readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile2" readonly></td>
         <td></td>
         <td class="white" >Total Miles</td>
-            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile3" oninput="feulcost('totalmile3','avgmilepergallon','feulreduction3','curgasprice','feulcost3')"readonly></td>
-            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile4" oninput="feulcost('totalmile4','avgmilepergallon','feulreduction4','curgasprice','feulcost4')"readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile3" readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile4" readonly></td>
         </tr>
-       
-        
 <tr>
 <td class="white"> Rate </td>
-<td class="yellow"><input type="text" style="background-color:yellow;" id="rate1" oninput="ratepermile('rate1','totalmile1','ratepermile1')"></td>
-<td class="yellow"><input type="text" style="background-color:yellow;" id="rate2" oninput="ratepermile('rate2','totalmile2','ratepermile2')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate1" oninput="ratepermile('rate1','totalmile1','ratepermile1'),TrueRate('rate1','feulcost1','Truerate1')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate2" oninput="ratepermile('rate2','totalmile2','ratepermile2'),TrueRate('rate2','feulcost2','Truerate2')"></td>
 <td></td>
 <td class="white"> Rate </td>
-<td  class="yellow"><input type="text" style="background-color:yellow;" id="rate3" oninput="ratepermile('rate3','totalmile3','ratepermile3')"></td>
-<td class="yellow"><input type="text" style="background-color:yellow;" id="rate4" oninput="ratepermile('rate4','totalmile4','ratepermile4')"></td>
+<td  class="yellow"><input type="text" style="background-color:yellow;" id="rate3" oninput="ratepermile('rate3','totalmile3','ratepermile3'),TrueRate('rate3','feulcost3','Truerate3')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate4" oninput="ratepermile('rate4','totalmile4','ratepermile4'),TrueRate('rate4','feulcost4','Truerate4')"></td>
 </tr>
 <tr>
 <td class="white"> Weight </td>
@@ -90,12 +84,12 @@
 </tr>
 <tr>
 <td class="white"> Fuel Reduction </td>
-<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction1" oninput="feulcost('totalmile1','avgmilepergallon','feulreduction1','curgasprice','feulcost1')"readonly></td>
-<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction2" oninput="feulcost('totalmile2','avgmilepergallon','feulreduction2','curgasprice','feulcost2')"readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction1" readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction2" readonly></td>
 <td></td>
 <td class="white">Fuel Reduction</td>
-<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction3" oninput="feulcost('totalmile3','avgmilepergallon','feulreduction3','curgasprice','feulcost3')"readonly></td>
-<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction4" oninput="feulcost('totalmile4','avgmilepergallon','feulreduction4','curgasprice','feulcost4')"readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction3" readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction4" readonly></td>
 </tr>
 <tr>
 <td class="white"> Fuel Cost </td>
@@ -108,12 +102,12 @@
 </tr>
 <tr>
     <td class="white"> Days </td>
-    <td class="yellow">2</td>
-    <td class="yellow">1</td>
+    <td class="yellow"><input type="text" style="background-color:yellow;" id="Day1" oninput="TrueDayRate('Day1','Truerate1','Truedayrate1')"></td>
+    <td class="yellow"><input type="text" style="background-color:yellow;" id="Day2" oninput="TrueDayRate('Day2','Truerate2','Truerdayate2')"></td>
     <td></td>
     <td class="white"> Days </td>
-    <td  class="yellow">2</td>
-    <td class="yellow">1</td>
+    <td  class="yellow"><input type="text" style="background-color:yellow;" id="Day3" oninput="TrueDayRate('Day3','Truerate3','Truedayrate3')"></td>
+    <td class="yellow"><input type="text" style="background-color:yellow;" id="Day4" oninput="TrueDayRate('Day4','Truerate4','Truedayrate4')"></td>
 </tr>
 <tr>
     <td class="white"> Rate Per Mile </td>
@@ -126,30 +120,30 @@
 </tr>
 <tr>
      <td class="mint"> True RPM </td>
-     <td  class="green">812.6</td>
-     <td class="mint">92.9</td>
+     <td  class="green"><input type="text" style="background-color:#49db5c;" id="TrueRPM1"readonly ></td>
+     <td class="mint"><input type="text" style="background-color:#97e697;" id="TrueRPM2"readonly ></td>
      <td></td>
      <td class="mint"> True RPM </td>
-     <td  class="green">812.6</td>
-     <td class="mint">92.9</td>
+     <td  class="green"><input type="text" style="background-color:#49db5c;" id="TrueRPM3"readonly ></td>
+     <td class="mint"><input type="text" style="background-color:#97e697;" id="TrueRPM4"readonly ></td>
 </tr>
  <tr>
      <td class="mint"> True Day Rate </td>
-    <td  class="green">812.6</td>
-     <td class="mint">92.9</td>
+    <td  class="green"><input type="text" style="background-color:#49db5c;" id="Truedayrate1"readonly ></td>
+     <td class="mint"><input type="text" style="background-color:#97e697;" id="Truerdayate2"readonly ></td>
      <td></td>
      <td class="mint"> True Day Rate </td>
-     <td  class="mint">812.6</td>
-      <td class="green">92.9</td>
+     <td  class="mint"><input type="text" style="background-color:#97e697;" id="Truedayrate3"readonly ></td>
+      <td class="green"><input type="text" style="background-color:#49db5c;" id="Truedayrate4"readonly ></td>
 </tr>
 <tr>
     <td class="mint"> True Rate </td>
-     <td class="green">812.6</td>
-     <td class="mint">92.9</td>
+     <td class="green"><input type="text" style="background-color:#49db5c;" id="Truerate1"readonly ></td>
+     <td class="mint"><input type="text" style="background-color:#97e697;" id="Truerate2"readonly ></td>
      <td></td>
      <td class="mint"> True Rate </td>
-     <td class="mint">812.6</td>
-     <td class="green">92.9</td>
+     <td class="mint"><input type="text" style="background-color:#97e697;" id="Truerate3"readonly ></td>
+     <td class="green"><input type="text" style="background-color:#49db5c;" id="Truerate4"readonly ></td>
 </tr> 
 <tr>
     <td colspan="7"></td>
@@ -160,9 +154,9 @@
         <td colspan ="2" class="green">Total Rate</td>
             </tr>
     <tr>
-        <td colspan ="2" class="green">756</td>
-        <td colspan ="3" class="green">643</td>
-        <td colspan ="2" class="green">998</td>
+        <td colspan ="2" class="green"><input type="text" style="background-color:#49db5c;" id="Totalratepermile"readonly ></td>
+        <td colspan ="3" class="green"><input type="text" style="background-color:#49db5c;" id="Totalrateperday"readonly ></td>
+        <td colspan ="2" class="green"><input type="text" style="background-color:#49db5c;" id="Totalrate"readonly ></td>
             </tr>
 </table>
 <script src="script.js"></script>
