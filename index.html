@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectJS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <td colspan="7" class="rate-cal">rate calculator</td>
+        </tr>
+        <tr>
+            <td class="white" style="text-align: right;" colspan="6">Enter Your Average Miles Per Gallon : &nbsp;</td>
+            <td class="yellow"><input type="text"style="background-color:yellow;" id="avgmilepergallon"></td>
+        </tr>
+        <tr>
+            <td class="white" style="text-align: right;" colspan="6">Enter current Gas Price : &nbsp;</td>
+            <td class="yellow"><input type="text"style="background-color:yellow;" id="curgasprice"></td>
+        </tr>
+        <tr >
+            <td class="rate-cal">1st Trip</td>
+            <td class="rate-cal">Load#1</td>
+            <td class="rate-cal">Load#2</td>
+            <td>&nbsp; &nbsp; &nbsp; </td>
+            <td class="rate-cal">Backhaul</td>
+            <td class="rate-cal">Load #1</td>
+            <td class="rate-cal">Load #1</td>
+        </tr>
+        <tr>
+            <td class="white">Triple Miles</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l01" oninput="totalmiles('l01','l02','l03','totalmile1')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l11" oninput="totalmiles('l11','l12','l13','totalmile2')"></td>
+            <td></td>
+            <td class="white">Triple Miles</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l01a" oninput="totalmiles('l01a','l02a','l03a','totalmile3')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l11a" oninput="totalmiles('l11a','l12a','l13a','totalmile4')"></td>
+        </tr>
+        <tr>
+            <td class="white">Dead Head / Pickup</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l02" oninput="totalmiles('l01','l02','l03','totalmile1')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l12" oninput="totalmiles('l11','l12','l13','totalmile2')"></td>
+            <td></td>
+            <td class="white">Dead Head / Pickup</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l02a" oninput="totalmiles('l01a','l02a','l03a','totalmile3')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l12a" oninput="totalmiles('l11a','l12a','l13a','totalmile4')"></td>
+        </tr>
+        <tr>
+            <td class="white">Dead Head / Delivery</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l03"  oninput="totalmiles('l01','l02','l03','totalmile1')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l13" oninput="totalmiles('l11','l12','l13','totalmile2')"></td>
+            <td ></td>
+            <td class="white">Dead Head / Delivery</td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l03a"  oninput="totalmiles('l01a','l02a','l03a','totalmile3')"></td>
+            <td class="yellow"><input type="text" style="background-color:yellow;" id="l13a" oninput="totalmiles('l11a','l12a','l13a','totalmile4')"></td>
+        </tr>
+        <tr>
+            <td class="white">Total Miles</td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile1" oninput="feulcost('totalmile1','avgmilepergallon','feulreduction1','curgasprice','feulcost1')"readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile2" oninput="feulcost('totalmile2','avgmilepergallon','feulreduction2','curgasprice','feulcost2')"readonly></td>
+        <td></td>
+        <td class="white" >Total Miles</td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile3" oninput="feulcost('totalmile3','avgmilepergallon','feulreduction3','curgasprice','feulcost3')"readonly></td>
+            <td class="grey"><input type="text" style="background-color:lightgray;" id="totalmile4" oninput="feulcost('totalmile4','avgmilepergallon','feulreduction4','curgasprice','feulcost4')"readonly></td>
+        </tr>
+       
+<tr>
+<td class="white"> Rate </td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate1" oninput="ratepermile('rate1','totalmile1','ratepermile1')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate2" oninput="ratepermile('rate2','totalmile2','ratepermile2')"></td>
+<td></td>
+<td class="white"> Rate </td>
+<td  class="yellow"><input type="text" style="background-color:yellow;" id="rate3" oninput="ratepermile('rate3','totalmile3','ratepermile3')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="rate4" oninput="ratepermile('rate4','totalmile4','ratepermile4')"></td>
+</tr>
+<tr>
+<td class="white"> Weight </td>
+<td  class="yellow"><input type="text" style="background-color:yellow;" id="Weight1" oninput="feulreduction('Weight1','feulreduction1')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="Weight2" oninput="feulreduction('Weight2','feulreduction2')"></td>
+<td></td>
+<td class="white"> Weight </td>
+<td  class="yellow"><input type="text" style="background-color:yellow;" id="Weight3" oninput="feulreduction('Weight3','feulreduction3')"></td>
+<td class="yellow"><input type="text" style="background-color:yellow;" id="Weight4" oninput="feulreduction('Weight4','feulreduction4')"></td>
+</tr>
+<tr>
+<td class="white"> Fuel Reduction </td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction1" oninput="feulcost('totalmile1','avgmilepergallon','feulreduction1','curgasprice','feulcost1')"readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction2" oninput="feulcost('totalmile2','avgmilepergallon','feulreduction2','curgasprice','feulcost2')"readonly></td>
+<td></td>
+<td class="white">Fuel Reduction</td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction3" oninput="feulcost('totalmile3','avgmilepergallon','feulreduction3','curgasprice','feulcost3')"readonly></td>
+<td class="grey"><input type="text" style="background-color:lightgray;" id="feulreduction4" oninput="feulcost('totalmile4','avgmilepergallon','feulreduction4','curgasprice','feulcost4')"readonly></td>
+</tr>
+<tr>
+<td class="white"> Fuel Cost </td>
+<td class="grey" ><input type="text" style="background-color:lightgray;" id="feulcost1"readonly></td>
+<td class="grey" ><input type="text" style="background-color:lightgray;" id="feulcost2"readonly></td>
+<td></td>
+<td class="white"> Fuel Cost </td>
+<td class="grey" ><input type="text" style="background-color:lightgray;" id="feulcost3"readonly></td>
+<td class="grey" ><input type="text" style="background-color:lightgray;" id="feulcost4"readonly></td>
+</tr>
+<tr>
+    <td class="white"> Days </td>
+    <td class="yellow">2</td>
+    <td class="yellow">1</td>
+    <td></td>
+    <td class="white"> Days </td>
+    <td  class="yellow">2</td>
+    <td class="yellow">1</td>
+</tr>
+<tr>
+    <td class="white"> Rate Per Mile </td>
+    <td class="grey" ><input type="text" style="background-color:lightgray;" id="ratepermile1"readonly></td>
+     <td class="grey" ><input type="text" style="background-color:lightgray;" id="ratepermile2"readonly></td>
+    <td></td>
+   <td class="white">Rate Per Mile</td>
+    <td class="grey" ><input type="text" style="background-color:lightgray;" id="ratepermile3"readonly></td>
+    <td class="grey" ><input type="text" style="background-color:lightgray;" id="ratepermile4"readonly></td>
+</tr>
+<tr>
+     <td class="mint"> True RPM </td>
+     <td  class="green">812.6</td>
+     <td class="mint">92.9</td>
+     <td></td>
+     <td class="mint"> True RPM </td>
+     <td  class="green">812.6</td>
+     <td class="mint">92.9</td>
+</tr>
+ <tr>
+     <td class="mint"> True Day Rate </td>
+    <td  class="green">812.6</td>
+     <td class="mint">92.9</td>
+     <td></td>
+     <td class="mint"> True Day Rate </td>
+     <td  class="mint">812.6</td>
+      <td class="green">92.9</td>
+</tr>
+<tr>
+    <td class="mint"> True Rate </td>
+     <td class="green">812.6</td>
+     <td class="mint">92.9</td>
+     <td></td>
+     <td class="mint"> True Rate </td>
+     <td class="mint">812.6</td>
+     <td class="green">92.9</td>
+</tr> 
+<tr>
+    <td colspan="7"></td>
+</tr>
+    <tr>
+        <td colspan ="2" class="green">Total Rate Per Mile</td>
+        <td colspan ="3" class="green">Total Rate Per Day</td>
+        <td colspan ="2" class="green">Total Rate</td>
+            </tr>
+    <tr>
+        <td colspan ="2" class="green">756</td>
+        <td colspan ="3" class="green">643</td>
+        <td colspan ="2" class="green">998</td>
+            </tr>
+</table>
+<script src="script.js"></script>
+</body>
+</html>

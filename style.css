@@ -1,0 +1,44 @@
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+    width: 60%;
+}
+th, td {
+    border: 1px solid silver;
+    padding: 10px 0px 10px 0px;
+}
+.rate-cal {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.white{
+    background-color: white;
+    font-weight: bold;
+}
+.mint {
+    background-color: #97e697;
+    font-weight: bold;
+}
+.yellow {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.green {
+    background-color: #49db5c;
+    font-weight: bold;
+}
+
+.grey {
+    background-color: lightgray;
+    font-weight: bold;
+    width: 10%;
+}  
+input[type="text"] {
+    width: 80%;
+    border: none;
+    box-sizing: border-box; /* Include padding in the width */
+}
