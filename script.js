@@ -32,3 +32,4 @@ function feulcost(inp1,inp2,inp3,inp4,output)  {
 
     document.getElementById(output).value = result;
 }
+
